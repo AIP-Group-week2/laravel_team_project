@@ -24,7 +24,7 @@
                     <a href="movie_guest">Check current movie</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">Team GitHub</a>
+                    <a href="https://github.com/fulunhe/laravel_team_project">Team GitHub（v0.1)</a>
                 </div>
             </div>
         </div>
