@@ -73,6 +73,19 @@
 
     <body>
 
+@if(count($errors))
+  <div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.
+    <br/>
+    <ul>
+      @foreach($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
+
+
 
     <div class="gallery">
         <a target="_blank" href="./images/86698.jpg">
@@ -80,7 +93,15 @@
         </a>
     </div>
 
-
+<div class="row">
+      <div class="col-md-6">
+        <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+          <label for="movietitle">First Name:</label>
+          <input type="text" id="movietitle" name="movietitle" class="form-control" placeholder="Enter movietitle" value="{{ old('movietitle') }}">
+          <span class="text-danger">{{ $errors->first('title') }}</span>
+        </div>
+      </div>
+      </div>
 
 
     <div class="container">
@@ -90,7 +111,7 @@
       {{ Form::open(array('url' => 'movieresult','files'=>true)) }}
 
       {{ Form::label('movietitle', 'movie title') }}
-      {{ Form::text('movietitle') }}
+      {{ Form::text('movietitle'),array('required') }}
       <br/><br/>
       {{ Form::label('date', 'Release Date') }}
       {{ Form::text('date') }}<br/><br/>

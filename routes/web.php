@@ -12,6 +12,9 @@ Auth::routes();
 |
 */
 
+Route::get('submitmovie', 'HomeController@formValidation');
+Route::post('submitmovie', 'HomeController@formValidationPost');
+
 Route::get('/', function () {
     return view('welcome');
 });
